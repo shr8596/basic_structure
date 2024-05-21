@@ -57,8 +57,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       // 0. main_view
       GoRoute(
         path: RouterPath.mainViewPath,
-        builder: (BuildContext context, GoRouterState state) =>
-        const MainView(),
+        builder: (BuildContext context, GoRouterState state) => const MainView(),
         routes: const [
 
           ///TODO 아래에 라우터 관리 하기

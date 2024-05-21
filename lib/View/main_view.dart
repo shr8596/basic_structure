@@ -9,14 +9,6 @@ import 'package:social_pub/Settings/custom_logger.dart';
 class MainView extends ConsumerStatefulWidget {
   const MainView({super.key});
 
-
-  /// //////////////////////////////////////////////////////////////////////////
-  /// router
-  /// //////////////////////////////////////////////////////////////////////////
-  static const String routerName = "WidgetFormView";
-  static const String routerPath = "WidgetFormView";
-
-
   @override
   ConsumerState<MainView> createState() => _WidgetFromState();
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,13 +11,17 @@ import 'package:social_pub/CustomUI/index.dart';
 /// //////////////////////////////////////////////////////////////////////////
 /// 진입점
 /// //////////////////////////////////////////////////////////////////////////
-void main() {
+void main() async{
 
   // 바인딩
   WidgetsFlutterBinding.ensureInitialized();
 
   // 화면 세로 고정
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  // dotenv 활용
+  await dotenv.load();
+  String key1 = dotenv.get("KEY_1");
 
   // riverpod 초기 선언(ProviderScope)
   runApp(
@@ -36,6 +41,7 @@ class MyApp extends ConsumerWidget {
     // router 설정 관련 변수 선언
     final goRouter = ref.watch(goRouterProvider);
 
+    // 화면 비율 설정
     return ScreenUtilInit(
       designSize: const Size(
         Constants.baseScreenWidth,
